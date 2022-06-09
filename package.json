@@ -1,7 +1,9 @@
 {
-  "name": "$name$",
-  "version": "$version$",
+  "name": "react-quiz",
+  "version": "1.0.0",
   "dependencies": {
-    $END$
+  },
+  "scripts": {
+    "watch-scss": "sass --watch html/assets/scss:html/assets/styles"
   }
 }

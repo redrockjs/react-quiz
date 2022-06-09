@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu Light"), local("Ubuntu-Light"), url("/html/assets/fonts/Ubuntu-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu Regular"), local("Ubuntu-Regular"), url("/html/assets/fonts/Ubuntu-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu Bold"), local("Ubuntu-Bold"), url("/html/assets/fonts/Ubuntu-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+* {
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+}
+
+.body {
+  background-image: linear-gradient(90.04deg, #040D2C 26.17%, #462A8B 78.11%);
+  margin: 0 auto;
+  min-width: 1200px;
+  padding: 0 40px;
+}
+
+.header {
+  padding: 28px 0 57px 0;
+}
+.header__heading {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 112px;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+}
+
+.main__heading {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  padding-top: 36px;
+  padding-bottom: 35px;
+}
+.main__question {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  margin-left: 30px;
+}
+.main__answers {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+}
+.main__item {
+  list-style: none;
+  padding: 20px;
+}
+.main__item:before {
+  padding-right: 10px;
+  content: "✓";
+}
+
+/*# sourceMappingURL=index.css.map */

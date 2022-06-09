@@ -1,0 +1,25 @@
+* {
+  color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+  font-style: normal;
+}
+
+.body {
+  background-image: linear-gradient(90.04deg, #040D2C 26.17%, #462A8B 78.11%);
+  margin: 0 auto;
+  min-width: 1200px;
+  padding: 0 40px;
+}
+
+.header {
+  padding: 28px 0 57px 0;
+
+  &__heading {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 112px;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+  }
+}
