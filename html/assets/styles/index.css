@@ -71,7 +71,7 @@ table {
 .body {
   background-image: linear-gradient(90.04deg, #040D2C 26.17%, #462A8B 78.11%);
   margin: 0 auto;
-  min-width: 1200px;
+  max-width: 1200px;
   padding: 0 40px;
 }
 
@@ -118,13 +118,12 @@ table {
   font-weight: 300;
   font-size: 24px;
   line-height: 28px;
-  margin-left: 30px;
 }
 .main__answers {
+  min-width: 300px;
   font-weight: 300;
   font-size: 24px;
   line-height: 28px;
-  margin-bottom: 80px;
 }
 .main__item {
   list-style: none;
@@ -133,6 +132,48 @@ table {
 .main__item:before {
   padding-right: 10px;
   content: "✓";
+}
+.main__buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 30px 0;
+  justify-content: flex-start;
+}
+
+.result__heading {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  padding-top: 36px;
+  padding-bottom: 35px;
+}
+.result__item {
+  padding-bottom: 20px;
+}
+.result__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.result__question {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+}
+.result__answers {
+  min-width: 300px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+}
+.result__answers:before {
+  content: "●";
+}
+.result__buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 30px 0;
+  justify-content: flex-end;
 }
 
 /*# sourceMappingURL=index.css.map */
