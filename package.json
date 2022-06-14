@@ -1,0 +1,9 @@
+{
+  "name": "react-quiz",
+  "version": "1.0.0",
+  "dependencies": {
+  },
+  "scripts": {
+    "watch-scss": "sass --watch html/assets/scss:html/assets/styles"
+  }
+}

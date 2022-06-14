@@ -1,0 +1,29 @@
+.main {
+
+  &__heading {
+    @include headings;
+  }
+
+  &__question {
+    @include questions;
+  }
+
+  &__answers {
+    @include answers;
+  }
+
+  &__item {
+    list-style: none;
+    padding: 20px;
+  }
+
+  &__item:before {
+    padding-right: 10px;
+    content: "✓";
+  }
+
+  &__buttons {
+    @include buttons;
+    justify-content: flex-start;
+  }
+}
