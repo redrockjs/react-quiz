@@ -1,10 +1,8 @@
-import {useEffect} from "react";
+//import {useEffect} from "react";
 
-export const Main = () => {
-  useEffect(() => {
-      console.log('Main loaded!')
-    }
-  )
+export const Main = ({state}) => {
+
+  console.log(state)
 
   return (
     <main>Main page</main>

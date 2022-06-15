@@ -4,21 +4,24 @@ import {Main} from "./pages/Main";
 import {Header} from "./components/Header";
 import {Result} from "./pages/Result";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 export default function App() {
 
-  useEffect( ()=>{
-      console.log('Page loaded!')
-      console.log({data})
-    }
-  )
+  const [state, setState] = useState(null);
+  // const [questionNumber, setQuestionNumber] = useState(1);
+
+
+  useEffect(() => {
+    //console.log(state)
+    setState(data);
+  })
 
   return (
     <BrowserRouter>
       <Header/>
       <Routes>
-        <Route exact path='/' element={<Main/>}/>
+        <Route exact path='/' element={<Main/>} state={state}/>
         <Route exact path='/result' element={<Result/>}/>
       </Routes>
     </BrowserRouter>
