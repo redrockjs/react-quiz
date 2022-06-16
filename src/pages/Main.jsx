@@ -1,16 +1,28 @@
 import styles from "./Main.module.css"
 import data from "../asssets/data/data.json";
-import React from 'react';
+import React, {useState} from 'react';
 
 export const Main = (props) => {
+
+  const [currentAnswer, setCurrentAnswer] = useState(null);
 
   const [questionNumber, setQuestionNumber] = React.useState(1);
 
   const handleNextBtn = () => {
     if (questionNumber < 10) {
       setQuestionNumber(questionNumber + 1)
+      setCurrentAnswer(null);
     } else {
       alert("Вопросы закончились");
+    }
+  }
+
+  const handleAnswerItem = (e) => {
+    // TODO: fix key and answer number, 0..3 != 1..4 ))
+    console.log(e.target.dataset.key+' '+data.questions[questionNumber].answer);
+    if (e.target.dataset.key === data.questions[questionNumber].answer) {
+      console.log("Yeaaa!!! Right!!!");
+      setCurrentAnswer(e.target.dataset.key);
     }
   }
 
@@ -26,8 +38,8 @@ export const Main = (props) => {
           data.questions[questionNumber].answers.map((el, idx) => {
             return (
               <React.Fragment key={idx}>
-                <li className={styles.main__item}>
-                  <span className={styles.main__item_hover}> {el} </span>
+                <li className={!!currentAnswer ? styles.main__item_active : styles.main__item}>
+                  <span className={styles.main__item_hover} data-key={idx} onClick={handleAnswerItem}> {el} </span>
                 </li>
               </React.Fragment>
             )
