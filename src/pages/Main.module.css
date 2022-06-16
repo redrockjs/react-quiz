@@ -16,14 +16,31 @@
   font-size: 24px;
   line-height: 28px;
 }
+
 .main__item {
   list-style: none;
   padding: 20px;
 }
+
 .main__item:before {
+  padding-right: 10px;
+  content: "●";
+}
+
+.main__item_active {
+  list-style: none;
+  padding: 20px;
+}
+
+.main__item_active:before {
   padding-right: 10px;
   content: "✓";
 }
+
+.main__item_hover{
+  cursor: pointer;
+}
+
 .main__buttons {
   display: flex;
   flex-direction: row;
