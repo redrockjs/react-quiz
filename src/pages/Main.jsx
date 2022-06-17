@@ -17,10 +17,10 @@ export const Main = (props) => {
   }
 
   const handleAnswerItem = (e) => {
-    let targetAns = +e.target.dataset.key;
-    let currentAns = +data.questions[questionNumber].answer-1;
+    let trgAnswer = +e.target.dataset.key;
+    let curAnswer = +data.questions[questionNumber].answer-1;
 
-    if (targetAns === currentAns) setCurrentAnswer(targetAns);
+    if (trgAnswer === curAnswer) setCurrentAnswer(trgAnswer);
   }
 
   return (
