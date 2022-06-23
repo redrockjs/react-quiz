@@ -1,1 +1,1 @@
-export const ANSWER_ADD = 'ANSWER_ADD';
+export const ADD_ANSWER = 'ADD_ANSWER';

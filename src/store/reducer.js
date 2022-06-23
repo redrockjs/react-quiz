@@ -1,13 +1,22 @@
 import * as actions from './actionTypes';
 
+const defaultState = {
+  answers: []
+}
 
-export const rootReducer = (state, action) => {
+const rootReducer = (state = defaultState, action) => {
+
   switch (action.type) {
 
-    case actions.ANSWER_ADD:
-      return state
+    case actions.ADD_ANSWER:
+      return {
+        ...state,
+        answers: [...state.answers, action.payload]
+      }
 
     default:
       return state
   }
 }
+
+export default rootReducer;

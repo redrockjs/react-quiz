@@ -1,27 +1,41 @@
 import styles from "./Main.module.css"
 import data from "../asssets/data/data.json";
 import React, {useState} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import {ADD_ANSWER} from "../store/actionTypes";
+//import {useHistory} from "react-router-dom";
 
 export const Main = (props) => {
+
+  const dispatch = useDispatch()
+  const state = useSelector(state => state)
+
+//  const history = useHistory()
 
   const [currentAnswer, setCurrentAnswer] = useState(null);
   const [questionNumber, setQuestionNumber] = React.useState(1);
 
+  const addAnswer = (value) => {
+    dispatch({type: ADD_ANSWER, payload: value})
+  }
+
   const handleNextBtn = () => {
     if (questionNumber < 10) {
-      setQuestionNumber(questionNumber+1)
+      setQuestionNumber(questionNumber + 1)
       setCurrentAnswer(null);
+      addAnswer(currentAnswer);
+      console.log(currentAnswer)
     } else {
       alert("Вопросы закончились");
+      //history.push('/result');
     }
   }
 
   const handleAnswerItem = (e) => {
-    let trgAnswer = +e.target.dataset.key;
-    let curAnswer = +data.questions[questionNumber].answer-1;
-
-    if (trgAnswer === curAnswer) setCurrentAnswer(trgAnswer);
+    setCurrentAnswer(+e.target.dataset.key);
   }
+
+  console.log(state)
 
   return (
     <main>
@@ -35,7 +49,7 @@ export const Main = (props) => {
           data.questions[questionNumber].answers.map((el, idx) => {
             return (
               <React.Fragment key={idx}>
-                <li className={currentAnswer===idx ? styles.main__item_active : styles.main__item}>
+                <li className={currentAnswer === idx ? styles.main__item_active : styles.main__item}>
                   <span className={styles.main__item_hover} data-key={idx} onClick={handleAnswerItem}> {el} </span>
                 </li>
               </React.Fragment>

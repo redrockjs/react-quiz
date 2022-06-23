@@ -1,14 +1,6 @@
-import {configureStore} from "@reduxjs/toolkit";
-import {rootReducer} from "./reducer";
+import {legacy_createStore} from "redux";
+import rootReducer from "./reducer";
 
-const preloadedState = {
-  answers: []
-}
-
-const store = configureStore({
-  reducer:rootReducer,
-  devTools: process.env.NODE_ENV !== 'production',
-  preloadedState
-});
+const store = legacy_createStore(rootReducer);
 
 export default store;
