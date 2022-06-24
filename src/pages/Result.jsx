@@ -1,19 +1,16 @@
 import styles from "./Result.module.css"
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {Link} from "react-router-dom";
+import {clearAnswersAC} from "../store/action";
 
 export const Result = () => {
 
   const data = useSelector(state => state.data);
   const answers = useSelector(state => state.answers);
 
-  data.questions.forEach((el, idx) => {
-    if (idx > 0) {
-      console.log(el.number + '. ' + el.question
-        + ' правильный ответ:' + el.answers[Number(el.answer) - 1]
-        + ' ваш ответ' + el.answers[answers[idx - 1]]);
-    }
-  })
+  const dispatch = useDispatch();
 
+  const handleNewGame = () => dispatch(clearAnswersAC());
 
   let listItems = () => {
     return data.questions.map((el, idx) => {
@@ -33,25 +30,18 @@ export const Result = () => {
     )
   }
 
-  console.log(answers);
-
   return (
     <main>
       <h2 className={styles.result__heading}>
         Результаты:
       </h2>
       <ul>
-
         {listItems()}
-        {/*<li className={styles.result__item}>*/}
-        {/*  <div className={styles.result__wrapper}>*/}
-        {/*    <div className={styles.result__question}> 1. Какая страна производит больше всего кофе в мире?</div>*/}
-        {/*    <div className={styles.result__answers}>Индонезия</div>*/}
-        {/*  </div>*/}
-        {/*</li>*/}
       </ul>
       <div className={styles.result__buttons}>
-        <button className={styles.result__btn}>Начать сначала</button>
+        <Link to={"/"}>
+          <button className={styles.result__btn} onClick={handleNewGame}>Начать сначала</button>
+        </Link>
       </div>
     </main>
   )

@@ -16,6 +16,12 @@ const rootReducer = (state = defaultState, action) => {
         answers: [...state.answers, action.payload]
       }
 
+      case actions.CLEAR_ANSWERS:
+      return {
+        ...state,
+        answers: []
+      }
+
     default:
       return state
   }

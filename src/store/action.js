@@ -5,3 +5,9 @@ export const addAnswerAC = (value) => (
     type: actions.ADD_ANSWER,
     payload: value
   });
+
+export const clearAnswersAC = () => (
+  {
+    type: actions.CLEAR_ANSWERS,
+    payload: null
+  });
