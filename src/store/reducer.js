@@ -1,7 +1,9 @@
 import * as actions from './actionTypes';
+import datafile from "../asssets/data/data.json";
 
 const defaultState = {
-  answers: []
+  answers: [],
+  data:datafile
 }
 
 const rootReducer = (state = defaultState, action) => {

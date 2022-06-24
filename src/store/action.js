@@ -1,6 +1,6 @@
 import * as actions from './actionTypes'
 
-export const addAnswer = (value) => (
+export const addAnswerAC = (value) => (
   {
     type: actions.ADD_ANSWER,
     payload: value

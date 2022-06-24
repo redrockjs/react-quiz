@@ -1,41 +1,35 @@
 import styles from "./Main.module.css"
-import data from "../asssets/data/data.json";
+//import data from "../asssets/data/data.json";
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {ADD_ANSWER} from "../store/actionTypes";
-//import {useHistory} from "react-router-dom";
+import {addAnswerAC} from "../store/action";
+import {useNavigate} from "react-router-dom";
 
 export const Main = (props) => {
 
-  const dispatch = useDispatch()
-  const state = useSelector(state => state)
-
-//  const history = useHistory()
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [currentAnswer, setCurrentAnswer] = useState(null);
-  const [questionNumber, setQuestionNumber] = React.useState(1);
+  const [questionNumber, setQuestionNumber] = useState(1);
+  const data = useSelector(state => state.data);
 
-  const addAnswer = (value) => {
-    dispatch({type: ADD_ANSWER, payload: value})
-  }
+  const addAnswer = (value) => dispatch(addAnswerAC(value))
 
   const handleNextBtn = () => {
+    //TODO кажется тут нужно оптимизировать
     if (questionNumber < 10) {
       setQuestionNumber(questionNumber + 1)
       setCurrentAnswer(null);
       addAnswer(currentAnswer);
-      console.log(currentAnswer)
     } else {
-      alert("Вопросы закончились");
-      //history.push('/result');
+      addAnswer(currentAnswer);
+      navigate("/result");
     }
   }
 
   const handleAnswerItem = (e) => {
     setCurrentAnswer(+e.target.dataset.key);
   }
-
-  console.log(state)
 
   return (
     <main>
