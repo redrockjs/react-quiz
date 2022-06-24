@@ -16,13 +16,11 @@ export const Main = (props) => {
   const addAnswer = (value) => dispatch(addAnswerAC(value))
 
   const handleNextBtn = () => {
-    //TODO кажется тут нужно оптимизировать
+    addAnswer(currentAnswer);
     if (questionNumber < 10) {
       setQuestionNumber(questionNumber + 1)
       setCurrentAnswer(null);
-      addAnswer(currentAnswer);
     } else {
-      addAnswer(currentAnswer);
       navigate("/result");
     }
   }
