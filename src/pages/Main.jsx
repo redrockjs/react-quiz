@@ -1,5 +1,4 @@
 import styles from "./Main.module.css"
-//import data from "../asssets/data/data.json";
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {addAnswerAC} from "../store/action";
@@ -50,8 +49,7 @@ export const Main = (props) => {
         }
       </ul>
       <div className={styles.main__buttons}>
-        <button className={styles.main__btn} onClick={handleNextBtn}>Продолжить
-        </button>
+        <button className={styles.main__btn} onClick={handleNextBtn}>Продолжить</button>
       </div>
     </main>
   );

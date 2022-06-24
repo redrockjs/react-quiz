@@ -3,11 +3,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import {clearAnswersAC} from "../store/action";
 
-export const Result = () => {
+export const Result = (props) => {
 
   const data = useSelector(state => state.data);
   const answers = useSelector(state => state.answers);
-
   const dispatch = useDispatch();
 
   const handleNewGame = () => dispatch(clearAnswersAC());
