@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-quiz/static/css/main.c52b3c1b.css",
+    "main.js": "/react-quiz/static/js/main.4bfa8cd7.js",
+    "static/media/Ubuntu-Light.ttf": "/react-quiz/static/media/Ubuntu-Light.0dd2d5986e2731a16ee7.ttf",
+    "static/media/Ubuntu-Regular.ttf": "/react-quiz/static/media/Ubuntu-Regular.1cbb1b79a23478cc89ad.ttf",
+    "static/media/Ubuntu-Bold.ttf": "/react-quiz/static/media/Ubuntu-Bold.fec2d0f1431a6114a6ce.ttf",
+    "index.html": "/react-quiz/index.html",
+    "main.c52b3c1b.css.map": "/react-quiz/static/css/main.c52b3c1b.css.map",
+    "main.4bfa8cd7.js.map": "/react-quiz/static/js/main.4bfa8cd7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c52b3c1b.css",
+    "static/js/main.4bfa8cd7.js"
+  ]
+}
