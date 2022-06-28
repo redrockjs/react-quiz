@@ -3,11 +3,13 @@ import React, {useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {addAnswerAC} from "../store/action";
 import {useNavigate} from "react-router-dom";
+import {CSSTransition} from "react-transition-group";
 
 export const Main = (props) => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isFlash, setIsFlash] = useState(false);
   const [currentAnswer, setCurrentAnswer] = useState(null);
   const [questionNumber, setQuestionNumber] = useState(1);
   const data = useSelector(state => state.data);
@@ -15,12 +17,16 @@ export const Main = (props) => {
   const addAnswer = (value) => dispatch(addAnswerAC(value))
 
   const handleNextBtn = () => {
-    addAnswer(currentAnswer);
-    if (questionNumber < 10) {
-      setQuestionNumber(questionNumber + 1)
-      setCurrentAnswer(null);
-    } else {
-      navigate("/result");
+    setIsFlash(true)
+    if (currentAnswer !== null) {
+      addAnswer(currentAnswer);
+      if (questionNumber < 10) {
+        setQuestionNumber(questionNumber + 1)
+        setCurrentAnswer(null);
+        setIsFlash(false)
+      } else {
+        navigate("/result");
+      }
     }
   }
 
@@ -41,7 +47,18 @@ export const Main = (props) => {
             return (
               <React.Fragment key={idx}>
                 <li className={currentAnswer === idx ? styles.main__item_active : styles.main__item}>
-                  <span className={styles.main__item_hover} data-key={idx} onClick={handleAnswerItem}> {el} </span>
+                  <CSSTransition
+                    in={isFlash}
+                    timeout={1000}
+                    classNames={{
+                      enter: styles['main__item_hover'],
+                      enterActive: styles['main__item_flash'],
+                      enterDone: styles['main__item_hover'],
+                    }}
+                    onEntered={() => setIsFlash(false)}
+                  >
+                    <span className={styles.main__item_hover} data-key={idx} onClick={handleAnswerItem}> {el} </span>
+                  </CSSTransition>
                 </li>
               </React.Fragment>
             )
