@@ -5,8 +5,13 @@ import {Result} from "./pages/Result";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {Provider} from "react-redux";
 import store from "./store/store";
+import {useEffect} from "react";
 
 export default function App() {
+
+  useEffect(() => {
+    document.title = "React Quiz"
+  }, []);
 
   return (
     <Provider store={store}>
