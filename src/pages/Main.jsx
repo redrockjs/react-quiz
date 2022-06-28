@@ -53,7 +53,9 @@ export const Main = (props) => {
                     classNames={{
                       enter: styles['main__item_hover'],
                       enterActive: styles['main__item_flash'],
-                      enterDone: styles['main__item_hover'],
+                      exit: styles['main__item_hover'],
+                      exitActive: styles['main__item_hover'],
+                      exitDone: styles['main__item_hover'],
                     }}
                     onEntered={() => setIsFlash(false)}
                   >

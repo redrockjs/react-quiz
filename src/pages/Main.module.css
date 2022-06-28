@@ -67,14 +67,11 @@
   box-shadow: inset 0px 0px 8px 2px #fff;
 }
 
-/*.item__flash {*/
-/*  text-shadow: 1px 1px 4px white, 0 0 10px white;*/
-/*}*/
-
 .main__item_flash {
   text-shadow: 0px 0px 0px white, 0 0 0px white;
   animation-duration: 1s;
   animation-name: anima;
+  cursor: pointer;
 }
 
 @keyframes anima {
